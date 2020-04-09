@@ -5,19 +5,19 @@ module.exports = function (grunt) {
         options: {
           htmlhintrc: '.htmlhintrc'
         },
-        src: ['*.html', './com/**/*.html']
+        src: ['*.html']
       },
       csslint: {
         options: {
           csslintrc: '.csslintrc'
         },
-        src: ['css/*.css', './com/**/*.css']
+        src: ['css/*.css']
       },
       eslint: {
         options: {
           configFile: '.eslintrc.json'
         },
-        target: ['./js/*.js', './com/**/*.js']
+        target: ['./js/*.js']
       },
       htmlmin: {
         options: {
@@ -44,11 +44,11 @@ module.exports = function (grunt) {
       },
       concat: {
         js: {
-          src: ['js/*.js', './com/**/*.js'],
+          src: ['js/*.js'],
           dest: 'dist/bundle.js'
         },
         css: {
-          src: ['css/*.css', './com/**/*.css'],
+          src: ['css/*.css'],
           dest: 'dist/bundle.css'
         }
       },
@@ -85,6 +85,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-usemin');
   
-    grunt.registerTask('release', ['copy:html', 'useminPrepare', 'concat', 'uglify', 'cssmin', 'usemin', 'htmlmin', 'imagemin', 'clean:end']);
+    grunt.registerTask('release', ['copy:html','concat', 'uglify', 'cssmin', 'usemin', 'htmlmin', 'imagemin', 'clean:end']);
   };
   
